@@ -1,6 +1,6 @@
 const btn_correo = document.getElementById("subscribe__correo");
 const email = document.getElementById("email");
-const emailRegex = '/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i';
+const emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 const respuesta = document.getElementById("value_text");
 
 // Create an instance of Notyf
