@@ -1,0 +1,340 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.footer{
+
+    margin-top: 10rem;
+    background-color: v.$fondo_verdoso;
+    padding: 3rem;
+    position: relative;
+
+    @include m.laptop { 
+        margin-top: 15rem;
+        padding-top: 10rem;
+    }
+
+    &__grid{
+
+        &::before,
+        &::after
+        {
+            content: '';
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            position: absolute;
+            width: 100%;
+            left: 0;
+        }
+
+        &::before{
+            background-image: url(../images/bg-footer-top-mobile.svg);
+            height: 20rem;
+            top: -12rem;
+            background-size: contain;
+
+            @include m.telefono { 
+                top: -13rem;
+            }
+
+            @include m.tablet { 
+                background-image: url(../images/bg-footer-top-desktop.svg);
+                background-size: contain;
+                top: -14.5rem;
+                height: 21rem;
+            }
+
+            @include m.laptop { 
+                background-image: url(../images/bg-footer-top-desktop.svg);
+                background-size: contain;
+                top: -15.5rem;
+            }
+    
+        }       
+
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 1rem;
+
+
+        @include m.tablet {     
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__informacion{
+        margin-top: 5rem;
+        @include m.tablet { 
+            margin-top: 0;
+        }
+
+        &--logo{
+            padding: 1.5rem 0;   
+        }
+
+        &--parrafo{
+            font-size: 1.4rem;
+            line-height: 1.5;
+            margin-bottom: 3rem;
+            color: v.$blanco;
+            font-weight: 400;
+            font-family: v.$fuente_cabecera;
+
+            @include m.telefono { 
+                font-size: 1.8rem;
+            }
+
+            @include m.tablet { 
+                margin-bottom: 2.5rem;
+                font-size: 1.4rem;
+                width: 85%;
+            }
+
+            @include m.laptop { 
+                font-size: 1.6rem;
+                width: 70%;
+            }
+        }
+
+    }
+    
+    &__logo{
+        width: 20rem;
+
+        @include m.telefono { 
+            width: 20rem;
+        }
+    }
+
+    
+    &__telefono{
+     color: v.$blanco;
+     font-family: v.$fuente_cabecera;
+        &::before{
+            content: '';
+            display: inline-flex;
+            width: 2rem;
+            align-items: flex-end;
+            height: 2rem;
+            background-size: 2rem;
+            margin-right: 2rem;
+            background-repeat: no-repeat;
+            background-image: url(../images/icon-phone.svg);
+        }
+
+        @include m.telefono { 
+            font-size: 1.5rem;
+        }
+
+        @include m.tablet { 
+            font-size: 1.6rem;
+        }
+
+    }
+
+    &__gmail{
+        color: v.$blanco;
+        font-family: v.$fuente_cabecera;
+
+        &::before{
+            content: '';
+            display: inline-flex;
+            width: 2rem;
+            align-items: flex-end;
+            height: 2rem;
+            background-size: 2rem;
+            margin-right: 2rem;
+            background-repeat: no-repeat;
+            background-image: url(../images/icon-email.svg);
+        }
+
+        @include m.telefono { 
+            font-size: 1.5rem;
+        }
+
+        @include m.tablet { 
+            font-size: 1.6rem;
+        }
+
+
+    }
+
+    &__iconos{
+        display: flex;
+        flex-direction: row;
+        width: 30%;
+        height: 6rem;
+        justify-content: space-between;
+        align-items: center;
+
+        @include m.telefono { 
+            width: 20%;
+        }
+
+        @include m.tablet { 
+            width: 30%;
+            height: 8rem;
+        }
+
+        @include m.laptop { 
+            width: 20%;
+        }
+
+
+        .fa-square-facebook{
+            color: v.$blanco;
+            font-size: 2.5rem;
+
+            &:hover{
+                color: #3b5998;
+                cursor: pointer;
+            }
+        }
+
+        .fa-instagram{
+            color: v.$blanco;
+            font-size: 2.5rem;
+
+            &:hover{
+                color: #E1306C;
+                cursor: pointer;
+            }
+        }
+
+        .fa-square-twitter{
+            color: v.$blanco;
+            font-size: 2.5rem;
+
+            &:hover{
+                color: #00acee;
+                cursor: pointer;
+            }
+        }
+
+    }
+
+    &__grid--form{
+        color: v.$blanco;
+    }
+
+    &__heading{
+
+        font-size: 2rem;
+        font-family: v.$fuente_cabecera;
+
+        @include m.tablet { 
+            font-size: 2.5rem;
+        }
+    }
+
+    &__parrafo{
+        font-size: 1.6rem;
+        line-height: 1.5;
+        margin-bottom: 3rem;
+        color: v.$blanco;
+        font-weight: 400;
+        font-family: v.$fuente_cabecera;
+
+        @include m.telefono { 
+            font-size: 1.8rem;
+        }
+
+        @include m.tablet { 
+            margin-bottom: 2.5rem;
+            font-size: 1.4rem;
+            width: 95%;
+        }
+
+        @include m.laptop { 
+            margin-bottom: 2.5rem;
+            font-size: 1.6rem;
+            width: 80%;
+        }
+    }
+
+
+
+    .input-group{
+        display: flex;
+        flex-direction: column;
+        justify-content: right;
+        width: 100%;
+
+        #value_text{
+            text-align: left;
+            color: red;
+            margin-top: -10px;
+        }
+
+        @include m.laptop { 
+            flex-direction: row;    
+            width: 90%;
+            gap: 3rem;
+
+            #value_text{
+                display: none;
+            }
+        }   
+    }
+
+    .input-label{
+        padding: 1.2rem;
+        margin-bottom: 1.5rem;
+        border: none;
+        border-radius: 1.5rem;
+
+        @include m.telefono { 
+            padding: 1.4rem;
+            width: 100%;
+        }
+
+        @include m.tablet { 
+            padding: 1rem;
+        }
+
+        @include m.laptop { 
+            width: 80%;
+            border-radius: 1rem;
+            padding: 1.5rem 2rem;
+
+        }
+    }
+
+    .btn_position{
+        text-align: right;
+
+        @include m.tablet { 
+            text-align: none;
+        }
+    }
+
+    .input-button{
+        @include m.inputB;
+        width: 40%;
+
+         @include m.telefono { 
+            width: 30%;
+        }
+
+        @include m.laptop { 
+            width: 100%;
+        }
+    }
+
+    
+    .contenido__footer{
+        @include m.container;
+    }
+
+    .attribution { 
+        font-size: 1.1rem; 
+        text-align: center; 
+        color: v.$blanco; 
+
+        @include m.telefono { 
+            font-size: 1.4rem;
+        }
+    }
+    .attribution a { color: hsl(228, 45%, 44%); }
+}

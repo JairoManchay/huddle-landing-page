@@ -1,0 +1,203 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenido{
+    position: relative;
+    padding: 5rem 0;
+}
+
+.contenido__principal
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.contenido__descripcion{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    .descripcion__contenido{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 0 4rem;
+
+
+        h1{
+            text-align: center;
+            font-size: 2.4rem;
+            font-family: v.$fuente_cabecera;
+            font-weight: 700;
+            color: v.$fondo_verdoso;
+
+            @include m.tablet { 
+                font-size: 3rem;
+            }
+
+            @include m.laptop { 
+                font-size: 4rem;
+            }
+        }
+
+        p{
+            text-align: center;
+            font-size: 1.3rem;
+            line-height: 1.4;
+            font-family: v.$fuente_cabecera;
+            font-weight: 700;
+            color: v.$fondo_verdoso;
+            padding-bottom: 2rem;
+
+            @include m.tablet { 
+                width: 68%;
+                font-size: 1.4rem;
+            }
+
+            @include m.laptop { 
+                width: 58%;
+                font-size: 1.6rem;
+            }
+        }
+
+        &--button{
+
+            @include m.inputB;
+        }
+    }
+
+    .descripcion__imagen{
+
+        img{
+            margin: 0 auto;
+            width: 80%
+        }
+    }
+}
+
+.contenido__contenedor{
+    @include m.container;
+}
+
+.contenido__numeros{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    @include m.tablet { 
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}
+
+.contenido__comunidad{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2{
+        font-size: 5rem;
+        color: v.$fondo_verdoso;
+        margin: 6rem 0 1.5rem 0;
+        font-weight: 700;
+        font-family: v.$fuente_cabecera;
+
+        &::before{
+            content: '';
+            display: block;
+            width: 3rem;
+            height: 3rem;
+            background-size: 3rem;
+            background-repeat: no-repeat;
+            background-image: url(../images/icon-communities.svg);
+        }
+
+        @include m.tablet { 
+            font-size: 6rem;
+        }
+
+        @include m.laptop { 
+            font-size: 7rem;
+        }
+    }
+
+    p{
+        margin: 0;
+        font-size: 1.3rem;
+        color: rgb(145, 145, 145);
+        font-weight: 700;
+        font-family: v.$fuente_cuerpo;
+
+        @include m.tablet { 
+            font-size: 1.4rem;
+        }
+
+        @include m.laptop { 
+            font-size: 1.8rem;
+        }
+    }
+
+}
+
+.contenido__message{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2{
+        font-size: 5rem;
+        color: v.$fondo_verdoso;
+        margin: 6rem 0 1.5rem 0;
+        font-weight: 700;
+        font-family: v.$fuente_cabecera;
+
+        &::before{
+            content: '';
+            display: block;
+            width: 3rem;
+            height: 3rem;
+            background-size: 3rem;
+            background-repeat: no-repeat;
+            background-image: url(../images/icon-messages.svg);
+        }
+
+
+        @include m.tablet { 
+            font-size: 6rem;
+        }
+
+        @include m.laptop { 
+            font-size: 7rem;
+        }
+    }
+
+    p{
+        margin: 0;
+        font-size: 1.3rem;
+        color: rgb(145, 145, 145);
+        font-weight: 700;
+        font-family: v.$fuente_cuerpo;
+        
+        span{
+            display: block;
+            text-align: center;
+            margin: 0;
+
+
+            @include m.telefono { 
+                display: inline-flex;
+            }
+        }
+
+        @include m.tablet { 
+            font-size: 1.4rem;
+        }
+
+        @include m.laptop { 
+            font-size: 1.7rem;
+        }
+
+    }
+}

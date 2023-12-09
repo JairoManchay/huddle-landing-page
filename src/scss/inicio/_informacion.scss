@@ -1,0 +1,226 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.informacion{
+    margin: 0 auto;
+
+}   
+
+.contenido__informacion{
+    @include m.container;
+}
+
+.informacion__contenido{
+    padding: 3rem;
+    position: relative;
+    
+
+
+    &:nth-child(odd)::before,
+    &:nth-child(odd)::after
+    {
+        content: '';
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+        width: 100%;
+        left: 0;
+    }
+
+    &:nth-child(1)::before{
+        background-image: url(../images/bg-section-top-mobile-1.svg);
+        height: 14rem;
+        top: -13rem;
+
+        @include m.tablet { 
+            background-image: url(../images/bg-section-top-desktop-1.svg);
+            background-size: contain;
+            height: 20rem;
+        }
+
+        @include m.laptop { 
+            background-image: url(../images/bg-section-top-desktop-1.svg);
+        }
+    }
+
+    &:nth-child(1)::after{
+        background-image: url(../images/bg-section-bottom-mobile-1.svg);
+        background-size: contain;
+        height: 14rem;
+        bottom: -8rem;
+
+        @include m.tablet { 
+            background-image: url(../images/bg-section-bottom-desktop-2.svg);
+            bottom: -10rem;
+        }
+    }
+
+
+
+
+    &:nth-child(3)::before{
+        background-image: url(../images/bg-section-top-mobile-2.svg);
+        height: 14rem;
+        top: -13rem;
+
+        @include m.telefono { 
+            top: -25rem;
+            background-size: cover;
+            height: 25rem;
+        }
+
+        @include m.tablet { 
+            background-image: url(../images/bg-section-top-desktop-2.svg);
+            background-size: contain;
+            top: -20rem;
+            height: 35rem;
+        }
+    }
+
+    &:nth-child(3)::after{
+        background-image: url(../images/bg-section-bottom-mobile-2.svg);
+        background-size: contain;
+        height: 14rem;
+        bottom: -12rem;
+
+        @include m.telefono { 
+            bottom: -8rem;
+            background-size: cover;
+        }
+
+        @include m.tablet { 
+            background-image: url(../images/bg-section-bottom-desktop-2.svg);
+            background-size: cover;
+            bottom: -8rem;
+        }
+
+        @include m.laptop { 
+            background-image: url(../images/bg-section-bottom-desktop-2.svg);
+            background-size: cover;
+            bottom: -10rem;
+
+        }
+
+    } 
+
+    &:nth-child(odd){
+        background-color: v.$fondo_claro;
+        height: 60rem;
+        margin-top: 8rem;
+
+        @include m.telefono{ 
+            height: 80rem;
+        }
+
+        @include m.tablet { 
+            height: 50rem;
+            margin-top: 10rem;
+        }
+
+    }
+
+    &:nth-child(even){
+        height: 60rem;
+        margin-top: 8rem;
+
+        @include m.telefono{ 
+            height: 90rem;
+        }
+
+        @include m.tablet { 
+            height: 65rem;
+        }
+
+        @include m.laptop{
+            height: 75rem;
+        }
+
+        .informacion__contenido-flex{
+            @include m.tablet { 
+                height: 50rem;
+                display: flex;
+                align-items: center;
+                flex-direction: row-reverse;
+            }
+        }
+    }
+
+
+
+}
+
+.informacion__contenido-flex{
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 4rem;
+    align-items: center;
+
+
+    @include m.tablet { 
+        flex-direction: row;
+
+    }
+
+
+}
+
+.contenido__comentario{
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+
+    p{
+        font-size: 1.3rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: v.$fondo_verdoso;
+        font-family: v.$fuente_cuerpo;
+
+        @include m.telefono{
+            width: 80%;
+            margin: 0 auto; 
+            font-size: 1.7rem;
+        }
+
+        @include m.tablet { 
+            font-size: 1.3rem;
+            width: 70%;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        @include m.laptop { 
+            width: 75%;
+            margin: 0 auto;
+            font-size: 1.5rem;
+            font-family: v.$fuente_cuerpo;
+            line-height: 2;
+            margin-top: 20px;
+            text-align: left;
+        }
+    }
+
+    h3{
+        font-size: 2rem;
+        color: v.$fondo_verdoso;
+
+        @include m.telefono { 
+            font-size: 2.4rem;
+            font-weight: 700;
+        }
+
+        @include m.tablet { 
+            font-size: 2.7rem;
+        }
+
+        @include m.laptop { 
+            text-align: left;
+            width: 75%;
+            margin: 0 auto;
+            font-size: 4rem;
+        }
+
+    }
+}

@@ -1,0 +1,48 @@
+@use 'variables' as v;
+
+@mixin container{
+    width: 95%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+@mixin inputB{
+        border: none;
+        background-color: v.$button_color;
+        padding: 1.2rem 1.7rem;
+        border-radius: 2rem;
+        border: 1px solid v.$rosa_lineado;
+        font-family: v.$fuente_cabecera;
+        color: v.$blanco;
+        font-size: 1.2rem;
+        font-weight: 400;
+
+        &:hover{
+            background-color: v.$rosa_lineado;
+            cursor: pointer;
+            color: v.$blanco;
+        }
+
+        @media (min-width: v.$laptop) { 
+            border-radius: 1rem;
+            padding: 1.5rem 2rem;
+        }
+}
+
+@mixin telefono{
+    @media (min-width: v.$telefono){
+        @content;
+    }
+}
+
+@mixin tablet{
+    @media(min-width: v.$tablet){
+        @content;
+    }
+}
+
+@mixin laptop{
+    @media (min-width: v.$laptop){
+        @content;
+    }
+}
